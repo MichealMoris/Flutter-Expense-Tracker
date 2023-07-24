@@ -1,3 +1,4 @@
+import 'package:expense_tracker/widgets/chart/chart.dart';
 import 'package:expense_tracker/widgets/expenses_list/expenses_list.dart';
 import 'package:expense_tracker/model/expense.dart';
 import 'package:expense_tracker/widgets/new_expense.dart';
@@ -12,7 +13,20 @@ class Expenses extends StatefulWidget {
 }
 
 class _ExpensesState extends State<Expenses> {
-  final List<Expense> _registeredExpense = [];
+  final List<Expense> _registeredExpense = [
+    Expense(
+      title: 'California Flight',
+      amount: 1500,
+      date: DateTime(2023, 7, 19),
+      category: Category.travel,
+    ),
+    Expense(
+      title: 'Heart Attack',
+      amount: 30,
+      date: DateTime(2023, 7, 19),
+      category: Category.food,
+    ),
+  ];
 
   void _removeExpense(Expense expense) {
     final expenseIndex = _registeredExpense.indexOf(expense);
@@ -54,7 +68,7 @@ class _ExpensesState extends State<Expenses> {
 
   @override
   Widget build(context) {
-    Widget _originalContent = const Center(
+    Widget originalContent = const Center(
       child: Text('There is no Expenses. Let\'s add some.'),
     );
     return Scaffold(
@@ -70,10 +84,10 @@ class _ExpensesState extends State<Expenses> {
       ),
       body: Column(
         children: [
-          const Text('The Chart...'),
+          Chart(expenses: _registeredExpense),
           Expanded(
             child: _registeredExpense.isEmpty
-                ? _originalContent
+                ? originalContent
                 : ExpensesList(
                     expensesList: _registeredExpense,
                     onRemoveExpense: _removeExpense,
