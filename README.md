@@ -1,10 +1,10 @@
 # Flutter Expense Tracker App
 
 <div style="display: flex; justify-content: center;">
-  <img src="https://github.com/MichealMoris/Flutter-Expense-Tracker/assets/138615256/d99073ca-d057-4dcd-820d-b7ef9b6f672b" alt="Expense Tracker App" style="margin-right: 10px;" width="237" height="474">
-  <img src="https://github.com/MichealMoris/Flutter-Expense-Tracker/assets/138615256/9d7356dd-4a3c-4337-8b24-fae9649a762d" alt="Expense Tracker App" width="237" height="474">
-  <img src="https://github.com/MichealMoris/Flutter-Expense-Tracker/assets/138615256/41443fc2-5583-4d97-9d11-16182f3e302e" alt="Expense Tracker App" style="margin-right: 10px;" width="237" height="474">
-  <img src="https://github.com/MichealMoris/Flutter-Expense-Tracker/assets/138615256/9284d845-4d3f-481b-94f3-80697c6aaaa5" alt="Expense Tracker App" width="237" height="474">
+  <img src="https://github.com/MichealMoris/Flutter-Expense-Tracker/assets/138615256/d99073ca-d057-4dcd-820d-b7ef9b6f672b" alt="Expense Tracker App" style="margin-right: 10px;" width="200" height="410">
+  <img src="https://github.com/MichealMoris/Flutter-Expense-Tracker/assets/138615256/9d7356dd-4a3c-4337-8b24-fae9649a762d" alt="Expense Tracker App" width="200" height="410">
+  <img src="https://github.com/MichealMoris/Flutter-Expense-Tracker/assets/138615256/41443fc2-5583-4d97-9d11-16182f3e302e" alt="Expense Tracker App" style="margin-right: 10px;" width="200" height="410">
+  <img src="https://github.com/MichealMoris/Flutter-Expense-Tracker/assets/138615256/9284d845-4d3f-481b-94f3-80697c6aaaa5" alt="Expense Tracker App" width="200" height="410">
 </div>
 
 Welcome to the Flutter Expense Tracker repository! This project is a simple Expense Tracker mobile application built using Flutter. It showcases the use of theming, clean and organized code practices, includes a chart to visualize expenses, allows users to add their expenses, and ensures the app is responsive and adaptive to different platforms for an enhanced user experience.
