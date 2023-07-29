@@ -75,45 +75,44 @@ class _ExpensesState extends State<Expenses> {
       child: Text('There is no Expenses. Let\'s add some.'),
     );
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Expense Tracker'),
-        actions: [
-          IconButton(
-              onPressed: _openAddExpenseOverlay,
-              icon: const Icon(
-                Icons.add,
-              )),
-        ],
-      ),
-      body: width < 600
-          ? Column(
-              children: [
-                Chart(expenses: _registeredExpense),
-                Expanded(
-                  child: _registeredExpense.isEmpty
-                      ? originalContent
-                      : ExpensesList(
+        appBar: AppBar(
+          title: const Text('Expense Tracker'),
+          actions: [
+            IconButton(
+                onPressed: _openAddExpenseOverlay,
+                icon: const Icon(
+                  Icons.add,
+                )),
+          ],
+        ),
+        body: width < 600
+            ? _registeredExpense.isEmpty
+                ? originalContent
+                : Column(
+                    children: [
+                      Chart(expenses: _registeredExpense),
+                      Expanded(
+                        child: ExpensesList(
                           expensesList: _registeredExpense,
                           onRemoveExpense: _removeExpense,
                         ),
-                ),
-              ],
-            )
-          : Row(
-              children: [
-                Expanded(
-                  child: Chart(expenses: _registeredExpense),
-                ),
-                Expanded(
-                  child: _registeredExpense.isEmpty
-                      ? originalContent
-                      : ExpensesList(
+                      ),
+                    ],
+                  )
+            : _registeredExpense.isEmpty
+                ? originalContent
+                : Row(
+                    children: [
+                      Expanded(
+                        child: Chart(expenses: _registeredExpense),
+                      ),
+                      Expanded(
+                        child: ExpensesList(
                           expensesList: _registeredExpense,
                           onRemoveExpense: _removeExpense,
                         ),
-                ),
-              ],
-            ),
-    );
+                      ),
+                    ],
+                  ));
   }
 }
