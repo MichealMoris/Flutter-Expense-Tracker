@@ -11,7 +11,7 @@ Welcome to the Flutter Expense Tracker repository! This project is a simple Expe
 
 ## Features
 
-- Theming: The app utilizes a carefully designed theme to provide a consistent and visually appealing user interface across various platforms.
+- Theming: The app utilizes a carefully designed theme to provide a consistent and visually appealing user interface across various platforms, it also has both Dark and Light themes.
 
 - Clean and Organized Code: The codebase adheres to best practices for clean architecture and well-organized code structure, making it easy for developers to understand and extend the app.
 
