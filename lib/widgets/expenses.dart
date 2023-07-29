@@ -60,6 +60,8 @@ class _ExpensesState extends State<Expenses> {
 
   void _openAddExpenseOverlay() {
     showModalBottomSheet(
+      constraints: const BoxConstraints.expand(),
+      useSafeArea: true,
       isScrollControlled: true,
       context: context,
       builder: (ctx) => NewExpense(_addNewExpense),
@@ -68,6 +70,7 @@ class _ExpensesState extends State<Expenses> {
 
   @override
   Widget build(context) {
+    final width = MediaQuery.of(context).size.width;
     Widget originalContent = const Center(
       child: Text('There is no Expenses. Let\'s add some.'),
     );
@@ -82,19 +85,35 @@ class _ExpensesState extends State<Expenses> {
               )),
         ],
       ),
-      body: Column(
-        children: [
-          Chart(expenses: _registeredExpense),
-          Expanded(
-            child: _registeredExpense.isEmpty
-                ? originalContent
-                : ExpensesList(
-                    expensesList: _registeredExpense,
-                    onRemoveExpense: _removeExpense,
-                  ),
-          ),
-        ],
-      ),
+      body: width < 600
+          ? Column(
+              children: [
+                Chart(expenses: _registeredExpense),
+                Expanded(
+                  child: _registeredExpense.isEmpty
+                      ? originalContent
+                      : ExpensesList(
+                          expensesList: _registeredExpense,
+                          onRemoveExpense: _removeExpense,
+                        ),
+                ),
+              ],
+            )
+          : Row(
+              children: [
+                Expanded(
+                  child: Chart(expenses: _registeredExpense),
+                ),
+                Expanded(
+                  child: _registeredExpense.isEmpty
+                      ? originalContent
+                      : ExpensesList(
+                          expensesList: _registeredExpense,
+                          onRemoveExpense: _removeExpense,
+                        ),
+                ),
+              ],
+            ),
     );
   }
 }
